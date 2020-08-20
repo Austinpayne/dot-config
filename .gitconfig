@@ -1,0 +1,17 @@
+[user]
+    name = Austin Payne
+[core]
+    editor = vim
+    pager = less
+    ui = always
+[alias]
+    amend = !"f() { git commit --amend --reset-author --date=\"$(date)\" $@; }; f"
+    lg =  !"f() { git log --graph --decorate --abbrev-commit --name-status $@; }; f"
+    lgo = !"f() { git log --graph --decorate --oneline $@; }; f"
+    update = !"f() { git fetch -p && git pull; }; f"
+    bname = !"f() { git symbolic-ref --short HEAD }; f"
+    mname = !"f() { git symbolic-ref --short refs/remotes/origin/HEAD | cut -d / -f2; }; f"
+[push]
+    default = simple
+[init]
+    templateDir = $HOME/.git-template
