@@ -29,7 +29,13 @@ set ruler
 let mapleader=","
 
 " ctag mappings
+" goto definition
 nnoremap <leader>. <C-]>
+" unwind tag stack
 nnoremap <leader>, <C-t>
+" next tag
 nnoremap <leader>/ :tn<CR>
+" previous tag
 nnoremap <leader>m :tp<CR>
+" show tag list
+nnoremap <leader>l :ts<CR>
