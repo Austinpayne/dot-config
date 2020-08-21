@@ -6,6 +6,8 @@ syntax on
 
 " bump lines saved to 10k and buffers to 1mb
 set viminfo='20,<10000,s1000
+" normal backspace
+set backspace=indent,eol,start
 
 " enable line numbers
 set number
@@ -39,3 +41,21 @@ nnoremap <leader>/ :tn<CR>
 nnoremap <leader>m :tp<CR>
 " show tag list
 nnoremap <leader>l :ts<CR>
+
+" show/hide cursor column/line
+nnoremap <leader>cc :set cursorcolumn cursorline<CR>
+nnoremap <leader>cl :set nocursorcolumn nocursorline<CR>
+
+" splits
+set splitbelow
+set splitright
+" move left
+nnoremap <C-H> <C-W><C-H>
+" move bottom
+nnoremap <C-J> <C-W><C-J>
+" move top
+nnoremap <C-K> <C-W><C-K>
+" move right
+nnoremap <C-L> <C-W><C-L>
+" swap top/bottom or left/right
+nnoremap <C-R> <C-W><C-R>
