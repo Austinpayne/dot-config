@@ -1,3 +1,6 @@
 [submodule ".vim/pack/plugins/start/ctrlp"]
 	path = .vim/pack/plugins/start/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule ".vim/pack/plugins/start/lastplace"]
+	path = .vim/pack/plugins/start/lastplace
+	url = https://github.com/farmergreg/vim-lastplace.git
