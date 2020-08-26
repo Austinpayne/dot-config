@@ -25,6 +25,8 @@ autocmd Filetype *.pug setlocal ts=2 sw=2 sts=0 expandtab
 
 " column ruler
 set ruler
+set laststatus=2
+set statusline=%F\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %p%%\ %)
 
 " key mappings
 " use comma for leader key
