@@ -61,3 +61,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 " swap top/bottom or left/right
 nnoremap <C-R> <C-W><C-R>
+
+" fzf file search
+"nnoremap <C-P> :Files<CR>
+" select all
+nnoremap <C-A> ggVG
+" forward serch word under cursor
+nnoremap <C-F> *
+" reverse search word under cursor
+nnoremap <C-R> #
