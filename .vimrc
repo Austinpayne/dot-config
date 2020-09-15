@@ -1,5 +1,8 @@
 " install pathogen plugins
+" (only if using > vim8)
 silent! execute pathogen#infect()
+" setup fzf main plugin path
+set rtp+=/usr/local/opt/fzf
 
 " enable syntax highlighting
 syntax on
@@ -63,7 +66,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-R> <C-W><C-R>
 
 " fzf file search
-"nnoremap <C-P> :Files<CR>
+nnoremap <C-P> :Files<CR>
 " select all
 nnoremap <C-A> ggVG
 " forward serch word under cursor

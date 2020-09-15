@@ -1,0 +1,9 @@
+# install homebrew
+if ! command -v brew; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+fi
+# install fzf
+if ! command -v fzf; then
+    brew install fzf
+    /usr/local/opt/fzf/install
+fi
