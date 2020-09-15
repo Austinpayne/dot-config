@@ -14,10 +14,6 @@ if [ ! -f ~/.git-prompt.sh ]; then
         https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 fi
 
-if [ "$OS" = "Darwin" ]; then
-    source install-darwin
-fi
-
 cp .rc ~/.rc
 cp .bashrc ~/.bashrc
 cp .zshrc ~/.zshrc
@@ -25,5 +21,11 @@ cp .gitconfig ~/.gitconfig
 cp .vimrc ~/.vimrc
 cp .screenrc ~/.screenrc
 
+# os specific install
+if [ "$OS" = "Darwin" ]; then
+    source install-darwin
+fi
+
 mkdir -p ~/.vim/pack
 cp -r .vim/pack/plugins/ ~/.vim/pack/plugins
+
