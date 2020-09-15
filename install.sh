@@ -6,6 +6,14 @@ OS=$(uname -s)
 git submodule init
 git submodule update
 
+source install-zsh
+source install-bash
+
+if [ ! -f ~/.git-prompt.sh ]; then
+    curl -sLo ~/.git-prompt.sh \
+        https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+fi
+
 if [ "$OS" = "Darwin" ]; then
     source install-darwin
 fi

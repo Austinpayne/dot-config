@@ -1,0 +1,12 @@
+# zsh specific install steps
+
+mkdir -p ~/.zsh
+# fixup compaudit insecure directories
+chmod 755 /usr/local/share/zsh /usr/local/share/zsh/site-functions
+
+# git-completion
+if [ ! -f ~/.zsh/_git ]; then
+    curl -sLo ~/.zsh/_git \
+        https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
+fi
+

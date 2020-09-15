@@ -1,0 +1,8 @@
+# bash specific install steps
+
+# git-completion
+if [ ! -f ~/.git-completion.bash ]; then
+    curl -sLo ~/.git-completion.bash \
+        https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+fi
+
