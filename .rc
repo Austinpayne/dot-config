@@ -1,4 +1,4 @@
-[ -f ~/.git-prompt.sh ] && source ~/.git-prompt.sh
+[ -s ~/.git-prompt.sh ] && source ~/.git-prompt.sh
 
 # nvm
 export NVM_DIR="$HOME/.nvm"

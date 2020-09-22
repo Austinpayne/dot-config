@@ -3,15 +3,15 @@
 fpath=(~/.zsh $fpath)
 
 # source global bashrc
-[ -f /etc/zshrc ] && source /etc/zshrc
+[ -s /etc/zshrc ] && source /etc/zshrc
 # general rc functionality
-[ -f ~/.rc ] && source ~/.rc
+[ -s ~/.rc ] && source ~/.rc
 # git-completion
-if [ -f ~/.git-completion.bash ]; then
+if [ -s ~/.git-completion.bash ]; then
     zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 fi
 # fzf
-if [ -f ~/.fzf.zsh ]; then
+if [ -s ~/.fzf.zsh ]; then
     source ~/.fzf.zsh
     export FZF_DEFAULT_OPTS="--extended --cycle --layout=reverse --info=inline"
 fi
