@@ -1,5 +1,10 @@
 [ -f ~/.git-prompt.sh ] && source ~/.git-prompt.sh
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+
 # aliases
 VENV_DIR=.venv
 alias venv-create="python -m venv $VENV_DIR"

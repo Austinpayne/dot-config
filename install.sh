@@ -14,6 +14,10 @@ if [ ! -f ~/.git-prompt.sh ]; then
         https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
 fi
 
+if [ ! -d ~/.nvm ]; then
+    curl -sLo- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+fi
+
 mkdir -p ~/.vim/pack
 mkdir -p ~/.ssh
 
