@@ -9,8 +9,9 @@
     lg =  !"f() { git log --graph --decorate --abbrev-commit --name-status $@; }; f"
     lgo = !"f() { git log --graph --decorate --oneline $@; }; f"
     update = !"f() { git fetch -p && git pull; }; f"
-    bname = !"f() { git symbolic-ref --short HEAD }; f"
+    bname = !"f() { git symbolic-ref --short HEAD; }; f"
     mname = !"f() { git symbolic-ref --short refs/remotes/origin/HEAD | cut -d / -f2; }; f"
+    publish = !"f() { git push --set-upstream origin $(git bname); }; f"
 [push]
     default = simple
 [init]
