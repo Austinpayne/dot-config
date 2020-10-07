@@ -27,11 +27,23 @@ bindkey "[C" forward-word
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
 EOF
-# Add Xcode custom shortcuts (doesn't work right, but just documenting), see: https://stackoverflow.com/a/41121405
-#sudo cat <<EOF >> /Applications/Xcode.app/Contents/Frameworks/IDEKit.framework/Resources/IDETextKeyBindingSet.plist
-#<key>Custom</key>
-#<dict>
-#    <key>Duplicate Current Line</key>
-#    <string>selectParagraph:, delete:, undo:, moveRight:, yankAndSelect:</string>
-#</dict>
-#EOF
+# Add Xcode custom shortcuts
+# see: https://stackoverflow.com/a/41121405
+XCODE_BINDINGS="/Applications/Xcode.app/Contents/Frameworks/IDEKit.framework/Resources/IDETextKeyBindingSet.plist"
+if [ -s "$XCODE_BINDINGS" ]; then
+    echo "Installing custom Xcode bindings, please enter sudo password"
+    read -r -d '' DUPLICATE_LINE <<EOF
+    <key>Custom</key><dict>
+        <key>Duplicate Current Line</key>
+        <string>selectParagraph:, delete:, undo:, moveRight:, yankAndSelect:</string>
+    </dict>
+EOF
+    export DUPLICATE_LINE
+    # remove previous custom bindings
+    sudo perl -i -0pE 's,<key>Custom</key><dict>.*?</dict>,,s' "$XCODE_BINDINGS" 2>&1 >/dev/null
+    # add bindings
+    sudo --preserve-env=DUPLICATE_LINE perl -i -0pe 's,</dict>\n</plist>,    $ENV{DUPLICATE_LINE}\n</dict>\n</plist>,' "$XCODE_BINDINGS" 2>&1 >/dev/null
+    # remove blank lines
+    sudo sed -i '' '/^[[:space:]]*$/d' "$XCODE_BINDINGS"
+fi
+
