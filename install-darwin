@@ -13,6 +13,45 @@ fi
 if ! brew list bash-completion 2>&1 >/dev/null; then
     brew install bash-completion
 fi
+cat <<EOF >> ~/.rc
+# colorize ls
+export CLICOLOR=1
+# see: man ls
+# default: LSCOLORS=exfxcxdxbxegedabagacad
+BLACK=a
+RED=b
+GREEN=c
+BROWN=d
+BLUE=e
+MAGENTA=f
+CYAN=g
+LIGHT_GREY=h
+DARK_GREY=A
+BOLD_RED=B
+BOLD_GREEN=C
+BOLD_BROWN=D
+BOLD_BLUE=E
+BOLD_MAGENTA=F
+BOLD_CYAN=G
+BRIGHT_WHITE=H
+DEFAULT_FG_BG=x
+
+# first char is foreground
+# second char is background
+DIRE=Ex
+SYMB=Gx
+SOCK=cx
+PIPE=dx
+EXEC=Cx
+BLOC=eg
+CHAR=ed
+EXEU=ab
+EXEG=ag
+DIRS=ac
+DIRN=ad
+
+export LSCOLORS=\${DIRE}\${SYMB}\${SOCK}\${PIPE}\${EXEC}\${BLOC}\${CHAR}\${EXEU}\${EXEG}\${DIRS}\${DIRN}
+EOF
 cat <<EOF >> ~/.bashrc
 # brew completions
 [ -f "\$(brew --prefix)/etc/profile.d/bash_completion.sh" ] && source "\$(brew --prefix)/etc/profile.d/bash_completion.sh"
