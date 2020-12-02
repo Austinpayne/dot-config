@@ -36,3 +36,6 @@ if [ "$OS" = "Darwin" ]; then
     source install-darwin
 fi
 
+if [ "$OS" = "Linux" ]; then
+    source install-linux
+fi
