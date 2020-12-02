@@ -1,0 +1,10 @@
+# vim install steps
+
+git submodule init
+git submodule update --depth=1
+
+mkdir -p ~/.vim/pack/bundle/start
+
+cp .vimrc ~/.vimrc
+cp -r .vim/pack/plugins/ ~/.vim/pack/plugins
+cp -r .vim/.swift/utils/vim ~/.vim/pack/bundle/start/swift
