@@ -85,4 +85,6 @@ EOF
     # remove blank lines
     sudo sed -i '' '/^[[:space:]]*$/d' "$XCODE_BINDINGS"
 fi
-
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
+defaults write com.apple.dt.Xcode BuildSystemScheduleInherentlyParallelCommandsExclusively -bool YES
+defaults write com.apple.dt.Xcode IDEIndexerActivityShowNumericProgress -bool YES
