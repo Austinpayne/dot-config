@@ -88,3 +88,16 @@ fi
 defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
 defaults write com.apple.dt.Xcode BuildSystemScheduleInherentlyParallelCommandsExclusively -bool YES
 defaults write com.apple.dt.Xcode IDEIndexerActivityShowNumericProgress -bool YES
+# Setup custom Xcode header comment
+# see: https://useyourloaf.com/blog/changing-xcode-header-comment/
+COMPANY="PassiveLogic, Inc."
+cat <<EOF > ~/Library/Developer/Xcode/UserData/IDETemplateMacros.plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FILEHEADER</key>
+	<string> Copyright (c) ___YEAR___ ${COMPANY}</string>
+</dict>
+</plist>
+EOF
