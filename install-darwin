@@ -4,15 +4,22 @@
 if ! command -v brew 2>&1 >/dev/null; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
+
 # install fzf
 if ! command -v fzf 2>&1 >/dev/null; then
     brew install fzf
     /usr/local/opt/fzf/install
 fi
+
 # install brew bash completions
 if ! brew list bash-completion 2>&1 >/dev/null; then
     brew install bash-completion
 fi
+
+if ! command -v swiftenv 2>&1 >/dev/null; then
+    brew install kylef/formulae/swiftenv
+fi
+
 cat <<EOF >> ~/.rc
 # colorize ls
 export CLICOLOR=1
@@ -51,6 +58,9 @@ DIRS=ac
 DIRN=ad
 
 export LSCOLORS=\${DIRE}\${SYMB}\${SOCK}\${PIPE}\${EXEC}\${BLOC}\${CHAR}\${EXEU}\${EXEG}\${DIRS}\${DIRN}
+if which swiftenv > /dev/null; then
+    eval "\$(swiftenv init -)"
+fi
 EOF
 cat <<EOF >> ~/.bashrc
 # brew completions
