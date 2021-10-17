@@ -16,3 +16,6 @@
     default = simple
 [init]
     templateDir = $HOME/.git-template
+	defaultBranch = main
+[pull]
+	rebase = true
