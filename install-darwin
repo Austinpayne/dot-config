@@ -20,6 +20,18 @@ if ! command -v swiftenv 2>&1 >/dev/null; then
     brew install kylef/formulae/swiftenv
 fi
 
+if ! command -v bat 2>&1 >/dev/null; then
+    brew install bat
+fi
+
+if ! command -v rg 2>&1 >/dev/null; then
+    brew install ripgrep
+fi
+
+if ! command -v ncdu 2>&1 >/dev/null; then
+    brew install ncdu
+fi
+
 cat <<EOF >> ~/.rc
 # colorize ls
 export CLICOLOR=1
