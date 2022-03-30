@@ -18,3 +18,15 @@ fi
 # PS1
 setopt PROMPT_SUBST ; PS1='%n@%m:%1~ $(__git_ps1 "[%s] ")%# '
 autoload -Uz compinit && compinit
+
+# key binds
+# see: https://coderwall.com/p/a8uxma/zsh-iterm2-osx-shortcuts
+# fixup option+left/right in iTerm
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+# fixup command+left/right in iTerm
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
+
+# Starship shell prompt
+eval "$(starship init zsh)"

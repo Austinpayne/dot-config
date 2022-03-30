@@ -33,3 +33,6 @@ fi
 if [ "$OS" = "Linux" ]; then
     source install-linux
 fi
+
+mkdir -p ~/.config
+cp starship.toml ~/.config/

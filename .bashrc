@@ -27,3 +27,6 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='\u@\h:\W $(__git_ps1 "[%s] ")\$ '
 fi
+
+# Starship shell prompt
+eval "$(starship init bash)"

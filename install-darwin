@@ -32,6 +32,10 @@ if ! command -v ncdu 2>&1 >/dev/null; then
     brew install ncdu
 fi
 
+if ! command -v starship 2>&1 >/dev/null; then
+    brew install starship
+fi
+
 cat <<EOF >> ~/.rc
 # colorize ls
 export CLICOLOR=1
