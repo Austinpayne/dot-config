@@ -13,3 +13,6 @@
 [submodule ".vim/pack/plugins/start/fugitive"]
 	path = .vim/pack/plugins/start/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/pack/plugins/start/deb.vim"]
+	path = .vim/pack/plugins/start/deb.vim
+	url = https://github.com/vim-scripts/deb.vim.git
