@@ -6,6 +6,7 @@ set rtp+=/usr/local/opt/fzf
 
 " enable syntax highlighting
 syntax on
+set nohlsearch
 
 " bump lines saved to 10k and buffers to 1mb
 set viminfo='20,<10000,s1000
@@ -25,6 +26,7 @@ set expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype json setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype *.pug setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype *.vue setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype yaml setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype html setlocal ts=2 sw=2 sts=0 expandtab
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
