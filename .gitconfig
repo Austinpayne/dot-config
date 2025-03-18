@@ -1,17 +1,21 @@
 [user]
     name = Austin Payne
+    email = austin@passivelogic.com
 [core]
     editor = vim
     pager = less
     ui = always
+    ignoreCase = true
 [alias]
     amend = !"f() { git commit --amend --reset-author --date=\"$(date)\" $@; }; f"
-    lg =  !"f() { git log --graph --decorate --abbrev-commit --name-status $@; }; f"
+    lg =  !"f() { git log --graph --decorate --abbrev-commit --abbrev=8 --name-status $@; }; f"
     lgo = !"f() { git log --graph --decorate --oneline $@; }; f"
-    update = !"f() { git fetch -p && git pull; }; f"
+    update = !"f() { git fetch -p && git pull --rebase; }; f"
     bname = !"f() { git symbolic-ref --short HEAD; }; f"
     mname = !"f() { git symbolic-ref --short refs/remotes/origin/HEAD | cut -d / -f2; }; f"
     publish = !"f() { git push --set-upstream origin $(git bname); }; f"
+    tag-details = !"f() { git for-each-ref --format '%(refname) %09 %(taggerdate) %(subject) %(taggeremail)' refs/tags  --sort=taggerdate; }; f"
+    stat = !"f() { git diff --stat $@; }; f"
 [push]
     default = simple
 [init]
