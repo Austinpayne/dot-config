@@ -10,3 +10,21 @@ export NVM_DIR="$HOME/.nvm"
 VENV_DIR=.venv
 alias venv-create="python -m venv $VENV_DIR"
 alias venv-activate="source $VENV_DIR/bin/activate"
+
+# Fix error: "Error while fetching remote repository ssh://<repo>: An unknown error occurred. reference 'refs/remotes/origin/main' not found (-1)"
+fixcode() {
+    [ -n "$1" ] || {
+        echo "usage: $0 <derived-data-directory>"
+        return 1
+    }
+    find "$1"/SourcePackages/repositories -type directory -name remotes -exec rm -r {} \;
+}
+
+# Fix error: "Internal inconsistency error (didStartTask): targetID (0) not found in _activeTargets."
+alias unfucode="killall XCBBuildService"
+
+# Fix 'does not match previously recorded value' resolve errors
+# Per https://stackoverflow.com/a/72838880 it is probably overkill to remove all of ~/Library/org.swift.swiftpm
+swiftpm-hard-reset() {
+    rm -rf .build .swiftpm ~/.swiftpm ~/.swiftpm ~/Library/Caches/org.swift.swiftpm ~/Library/org.swift.swiftpm*
+}
