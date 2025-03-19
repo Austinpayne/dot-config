@@ -24,9 +24,10 @@ autoload -Uz compinit && compinit
 # fixup option+left/right in iTerm
 bindkey "[D" backward-word
 bindkey "[C" forward-word
-# fixup command+left/right in iTerm
-bindkey "^[a" beginning-of-line
-bindkey "^[e" end-of-line
+# fixup fn+left/right in iTerm
+# see: https://apple.stackexchange.com/a/420407
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
 
 # Starship shell prompt
 eval "$(starship init zsh)"
